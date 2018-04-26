@@ -1,0 +1,35 @@
+/**
+ * 展示一些junit assert 例子
+ */
+
+ import static org.junit.Assert.*;
+ import org.junit.Test;
+
+ public class Junit4AssertionTest {				
+
+    @Test		
+    public void testAssert(){					
+        		
+        //Variable declaration		
+        String string1 = "Junit";					
+        String string2 = "Junit";					
+        String string3 = "test";					
+        String string4 = "test2";					
+        String string5 = null;					
+        int variable1 = 1;					
+        int	variable2 = 2;					
+        int[] airethematicArrary1 = { 1, 2, 3 };					
+        int[] airethematicArrary2 = { 1, 2, 3 };					
+        		
+        //Assert statements		
+        assertEquals("string1 = string2", string1, string2); // pass
+        assertSame("string1 same as string2", string1, string2); //pass
+        assertEquals("string3 = string4",string3, string4); // fail 	
+        assertSame("string3 same as string4", string3, string4); // pass					
+        assertNotSame(string1, string3);					
+        assertNotNull(string1);			
+        assertNull(string5);			
+        assertTrue(variable1 < variable2);					
+        assertArrayEquals(airethematicArrary1, airethematicArrary2);					
+    }		
+}
